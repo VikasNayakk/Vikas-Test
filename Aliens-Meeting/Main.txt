@@ -1,0 +1,140 @@
+"Aliens Meeting" — Standard Operating Prompt (IM)
+
+## 1) Purpose
+
+"Aliens Meeting" ka purpose office team members aur students ki growth, discipline aur performance monitoring karna hai.
+
+Ye meeting sabhi Members aur Students ke liye mandatory hai.
+
+Participants 2 type ke honge:
+
+- **Members**: Jinko kaam assign hai aur salary mil rahi hai.
+- **Students**: Jo training le rahe hain aur kaam sikh rahe hain.
+
+---
+
+## 2) Master Data Reading (Mandatory First Step)
+
+System ko sabse pehle ye files read karni hongi:
+
+### 2.1 All-Students
+- Path: `Main/All-Students.txt`
+
+### 2.2 All-Members
+- Path: `Main/All-Members.txt`
+
+### Processing Rules
+- Dono lists ko merge karo → "Master List" banao
+- Duplicate names remove karo
+- Extra spaces trim karo
+- Name format normalize karo
+
+Result: system ke paas complete participant base hona chahiye.
+
+---
+
+## 3) Present Record Creation (All-Join)
+
+### Input Required
+- "Present Members & Students List"
+- Agar available na ho to user se maango
+
+### Action
+- `All-Join` folder me date-wise file create karni hai
+- Present Members + Students dono ek hi file me honge
+
+### Location & Naming
+- Folder: `Main/All-Join/`
+- File format: `Present-DD-MM-YYYY.txt`
+- Example: `Present-03-02-2026.txt`
+
+Purpose: historical record maintain rahega ki kaun kis date ko meeting me join hua tha.
+
+---
+
+## 4) Late Members Calculation
+
+### Input Required
+- Present list
+- "Time par join" list (on-time joiners)
+- Agar available na ho to user se maango
+
+### Core Logic
+`Late List = Present List - Time Par Join List`
+
+Matlab jo present me hain lekin time par join me nahi hain = Late Members.
+
+### Late File Creation
+- Folder: `Main/5M/`
+- File format: `5mlate-DD-MM-YYYY.txt`
+- Example: `5mlate-03-02-2026.txt`
+
+---
+
+## 5) Absent Members Calculation
+
+### Core Formula
+`Absent = Master List - Present List`
+
+Isse automatic absent members aur students mil jayenge.
+
+### New Fetcher (Absent)
+- Absent names ko fetch karke alag file me save karna hai
+- Folder: `Main/Absent/`
+- File format: `Absent-DD-MM-YYYY.txt`
+- Example: `Absent-04-03-2026.txt`
+
+---
+
+## 6) Final CSV Generation
+
+System ke paas 3 datasets hone chahiye:
+
+1. Present Members & Students
+2. Late Members & Students
+3. Absent Members & Students
+
+In tino ko combine karke CSV generate karni hai.
+Jab bhi CSV generate karo to Members ko upar rakhna hai taki identify karna easy ho.
+
+### CSV Location & Naming
+- Folder: `Main/Table/`
+- File format: `Table-DD-MM-YYYY.csv`
+- Example: `Table-03-02-2026.csv`
+
+### CSV Structure (Mandatory)
+`No,Present,Late,Absent`
+
+Example:
+
+`1,Vikas Nayak,,Bharat Ram`
+`2,A'dii Sunlay,,Ravina`
+`3,Yogesh Kumar,,Mamta-2`
+
+### CSV Rules
+- UTF-8 encoding use karo
+- Blank cells allowed hain
+- Row numbering continuous ho
+- Extra spaces nahi hone chahiye
+- Same order maintain karo
+
+---
+
+## 7) Validation Rules (Strongly Recommended)
+
+System ko verify karna chahiye:
+
+- Master count match ho
+- Present + Absent = Master
+- Late ⊆ Present
+- Duplicate names na hon
+- Empty names skip hon
+
+---
+
+## 8) If Any Input Missing
+
+System ko automatically user se poochna chahiye:
+
+- "Present list provide karein"
+- "On-time join list provide karein"

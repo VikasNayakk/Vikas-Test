@@ -1,0 +1,133 @@
+ALIENS MEETING — TRIGGER FILE (CLEAN FORMAT)
+
+==================================================
+GLOBAL RULE
+==================================================
+- Sirf wahi block execute hoga jisme `Statu = 1` ho.
+- Jisme `Statu = 0` ho, usse execute nahi karna.
+
+
+==================================================
+TRIGGER BLOCK 1
+==================================================
+Statu = 1
+
+Command:
+RUN ALIENS-MEETING --read-main --load-master --start-attendance
+
+Execution Payload:
+ALIENS_MEETING_EXECUTE
+STEP=FULL
+READ_MAIN=YES
+LOAD_MASTER=YES
+ASK_PRESENT=YES
+ASK_ONTIME=YES
+GENERATE_ALLJOIN=YES
+GENERATE_LATE=YES
+GENERATE_CSV=YES
+DATE=3/9/2026
+
+
+==================================================
+TRIGGER BLOCK 2 (REFERENCE ONLY)
+==================================================
+Statu = 0
+
+Excel Path:
+C:\Users\VikasNayak\OneDrive - Aliens Company\Aliens-Meeting\Main\Excel
+
+Instruction:
+- Is path par jo existing Excel hai, usi me entry karni hai.
+- Nayi Excel file create nahi karni.
+
+Entry Data:
+- Meeting Name = Project Manger
+- Type = Mangement
+- Duration = 7:00pm to 8:00pm
+- Date = 3/4/2026
+- Host = himanshu
+- Present = 1
+- Late = 2
+- Absent = 4
+
+
+==================================================
+TRIGGER BLOCK 3
+==================================================
+Statu = 1
+
+List Of All-Join:
+Vikas Nayak (Me)
+
+Dinesh Kumar
+Ajay Nayak
+Namchand Nayak
+Pooja Sudiya
+Arnav Bishnoi
+Sunil Kori
+Anita Nayak
+Rahul
+Harpreet Singh
+Khushbu
+Sandeep Barupal
+Sahil Sudiya
+Jaspal Byavat
+Tarachand Lohara
+Himanshu Nayak
+Aira
+Poonam Kumari
+Gurpreet Singh 2
+Gagan Chouhan
+Sumit Kumar
+
+
+List Of Time Par Join:
+
+
+A"dii Sunlay 
+Dinesh kumar
+Ajay Nayak
+Namchand Nayak
+Pooja Sudiya
+Arnav Bishnoi
+Sunil kori
+Vikas Nayak (Me)
+Anita Nayak
+Harpreet Singh
+khushbu
+Sandeep Barupal
+Sahil Sudiya
+Jaspal Byavat
+Tarachand Lohara
+Himanshu Nayak
+
+
+
+==================================================
+TRIGGER BLOCK 4
+==================================================
+Statu = 1
+
+https://teams.microsoft.com/v2/   
+
+Team ke under Vikas Nayak ko " Aliens-Meeting ke under jo Folder hai table name ka uska ab jo report bnegi vo shere karni hai"
+--- > But yaad rahe ye kam last me karna hai 
+
+table or dhyan se kh kari is tarike se bhejna hai  
+
+Example Ruls :- 
+
+
+Data ko Excel file me export mat karo.
+Output ko isi table format me generate karo:
+
+Columns:
+No. | Present Members | Late | Absent
+
+Rules:
+1. Har row me serial number hona chahiye.
+2. Present  column me present ....  ke naam likho.
+3. Late column me late ....  ke naam likho.
+4. Absent column me absent .... ke naam likho.
+5. Output plain table format me ho, Excel file generate nahi karni.
+6. Table copy-paste friendly honi chahiye.

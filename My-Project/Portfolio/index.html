@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vikas Nayak | Intelligence Dashboard Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <main class="hud">
+    <header class="topbar frame">
+      <div class="dot blink"></div>
+      <p>SUITABLE FOR</p>
+      <h1>VIKAS NAYAK BROADCAST DESIGN</h1>
+      <div class="dot blink"></div>
+    </header>
+
+    <section class="left-col">
+      <article class="frame panel map-panel">
+        <h2>ORIGIN TRACK</h2>
+        <div class="map-grid usa"></div>
+        <p class="tag">BHAGSAR, RAJASTHAN, INDIA</p>
+      </article>
+
+      <article class="frame panel stat-panel">
+        <div class="dial-stack">
+          <div class="dial"><span>25</span></div>
+          <div class="dial"><span>08</span></div>
+        </div>
+        <div class="matrix" id="leftMatrix"></div>
+      </article>
+
+      <article class="frame panel skills-panel">
+        <h2>SKILLS</h2>
+        <ul class="list mono">
+          <li><span>SOFTWARE PLANNING</span><b>96</b></li>
+          <li><span>AI AUTOMATION</span><b>94</b></li>
+          <li><span>WEB DEVELOPMENT</span><b>92</b></li>
+          <li><span>PROJECT AUDIT</span><b>90</b></li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="center-col frame">
+      <div class="center-label">GLOBAL PROJECT NETWORK</div>
+      <div class="globe-wrap">
+        <div class="halo halo-a"></div>
+        <div class="halo halo-b"></div>
+        <canvas id="globeCanvas" width="720" height="720"></canvas>
+        <div class="sweep"></div>
+        <div class="pin-label pin-usa">INDIA NODE</div>
+        <div class="pin-label pin-africa">ZERO TEAM</div>
+      </div>
+      <div class="center-meta mono">VIKAS NAYAK | DOB 25 AUG 2008 | YOUNG SYSTEM BUILDER</div>
+    </section>
+
+    <section class="right-col">
+      <article class="frame panel text-panel">
+        <h2>PROFILE</h2>
+        <p class="mono copy">Young developer and project planner focused on original software systems, customizable brand themes, and AI-ready architecture.</p>
+      </article>
+
+      <article class="frame panel metrics-panel">
+        <h2>METRICS</h2>
+        <div class="ring-row">
+          <div class="ring" data-value="60"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="48"></circle><circle class="progress" cx="60" cy="60" r="48"></circle></svg><span>60</span></div>
+          <div class="ring" data-value="75"><svg viewBox="0 0 120 120"><circle class="track" cx="60" cy="60" r="48"></circle><circle class="progress" cx="60" cy="60" r="48"></circle></svg><span>75</span></div>
+        </div>
+        <div class="matrix" id="rightMatrix"></div>
+      </article>
+
+      <article class="frame panel vision-panel">
+        <h2>VISION</h2>
+        <p class="mono copy">Build technology platforms that solve real problems and create value for humanity through innovation and teamwork.</p>
+      </article>
+    </section>
+
+    <section class="frame bottom-strip">
+      <div class="strip-head">
+        <h2>ACTIVITY STREAM</h2>
+        <p class="mono">SETUP | TESTING | BRAND CREATION | DATA MANAGEMENT | TEAM UPDATES</p>
+      </div>
+      <div class="bars" id="streamBars"></div>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

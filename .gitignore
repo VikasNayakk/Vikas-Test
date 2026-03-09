@@ -1,0 +1,10 @@
+Vikas-Test/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Python cache
+__pycache__/
+*.pyc
